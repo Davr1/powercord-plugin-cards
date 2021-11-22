@@ -94,6 +94,7 @@ $gallery-icon: 'M6 2C3.79086 2 2 3.79086 2 6V18C2 20.2091 3.79086 22 6 22H18C20.
                     min-height: 40px;
                 }
                 & a[href^=https\:\/\/github\.com\/] {
+                    line-height: 1rem;
                     &::before {
                         @include button-image;
                         content: url("data:image/svg+xml;utf8,<svg width='16' height='16' viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='#{$github-icon}'/></svg>");
