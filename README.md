@@ -17,4 +17,4 @@ These are the modifiable variables (Can be pasted into quick css)
 ```
 ## Preview
 ![plugincards](https://user-images.githubusercontent.com/42148912/142907103-d269b422-c057-40bc-9608-fd9a88cc3375.png)
-Inspired by [Powercord plugin downloader](https://github.com/LandenStephenss/PowercordPluginDownloader/)
+Inspired by [PowercordPluginDownloader](https://github.com/LandenStephenss/PowercordPluginDownloader/)
