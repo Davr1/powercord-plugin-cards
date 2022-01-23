@@ -75,7 +75,7 @@ $gallery-icon: 'M6 2C3.79086 2 2 3.79086 2 6V18C2 20.2091 3.79086 22 6 22H18C20.
                 &>* {
                     line-height: normal;
                 }
-                &>:first-child:not(a) {
+                &>.blockquoteContainer-3VtvI1:first-child>blockquote>:first-child:not(a), &>:first-child:not(a):not(.blockquoteContainer-3VtvI1) {
                     position: absolute;
                     display: block;
                     font-size: 1.4rem;
@@ -89,7 +89,7 @@ $gallery-icon: 'M6 2C3.79086 2 2 3.79086 2 6V18C2 20.2091 3.79086 22 6 22H18C20.
                         font-weight: bold;
                     }
                 }
-                &::first-line {
+                &::first-line, &>.blockquoteContainer-3VtvI1>blockquote::first-line {
                     line-height: 0;
                     color: transparent;
                 }
