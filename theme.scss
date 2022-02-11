@@ -5,22 +5,28 @@
     --card-button-color: var(--brand-experiment);
     --max-previews: 3;
 }
-@mixin button {
-    position: absolute;
-    font-size: 14px;
-    line-height: 42px;
-    font-weight: 500;
-    color: white;
-    background: var(--card-button-color);
-    border-radius: 3px;
-    width: 108px;
-    text-align: center;
-    padding-left: 22px;
-    text-decoration: unset;
-    font-style: normal;
-}
-@mixin button-hover {
-    background: linear-gradient(#0001, #0001), linear-gradient(var(--card-button-color), var(--card-button-color));
+@mixin button($text, $width) {
+    &::after {
+        content: $text;
+        position: absolute;
+        width: calc(#{$width} - 22px);
+        font-size: 14px;
+        line-height: 42px;
+        font-weight: 500;
+        color: white;
+        background-color: var(--card-button-color);
+        border-radius: 3px;
+        text-align: center;
+        padding-left: 22px;
+        text-decoration: unset;
+        font-style: normal;
+    }
+    &:hover::after {
+        background-image: linear-gradient(#0001, #0001);
+    }
+    &:active::after {
+        background-image: linear-gradient(#0003, #0003);
+    }
 }
 @mixin button-image($icon, $size, $viewbox-size) {
     content: url("data:image/svg+xml;utf8,<svg width='#{$size}' height='#{$size}' viewBox='0 0 #{$viewbox-size} #{$viewbox-size}' fill='white' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='#{$icon}'/></svg>");
@@ -106,19 +112,15 @@ $gallery-icon: 'M6 2C3.79086 2 2 3.79086 2 6V18C2 20.2091 3.79086 22 6 22H18C20.
                     min-height: 40px;
                 }
                 & a[href^="https://github.com/"] {
+                    @include button('GitHub', 130px);
                     &::before {
                         @include button-image($github-icon, 16, 16);
                         right: 67px;
                         bottom: -38px;
                     }
                     &::after {
-                        @include button;
-                        content: 'GitHub';
                         right: -14px;
                         bottom: -52px;
-                    }
-                    &:hover::after {
-                        @include button-hover;
                     }
                     &~a::before, &~a::after {
                         content: unset;
@@ -136,18 +138,11 @@ $gallery-icon: 'M6 2C3.79086 2 2 3.79086 2 6V18C2 20.2091 3.79086 22 6 22H18C20.
                     height: 42px !important;
                     margin: 8px 0 0 10px;
                     border-radius: 0;
+                    @include button('Preview', 108px);
                     &::before {
                         @include button-image($gallery-icon, 18, 24);
                         bottom: 12px;
                         left: 19px;
-                    }
-                    &::after {
-                        @include button;
-                        content: 'Preview';
-                        width: 86px;
-                    }
-                    &:hover::after {
-                        @include button-hover;
                     }
                 }
             }
