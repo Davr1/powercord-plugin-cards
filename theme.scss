@@ -50,80 +50,87 @@ $gallery-icon: 'M6 2C3.79086 2 2 3.79086 2 6V18C2 20.2091 3.79086 22 6 22H18C20.
         border: 1px solid var(--background-tertiary);
         max-width: var(--card-width);
         & .message-2CShn3 {
+            position: relative;
             margin: unset;
             padding: 15px 20px 0 46px;
             width: calc(100% - 118px);
+            height: calc(100% - 78px);
             &:hover, &.selected-2LX7Jy, &.mentioned-Tre-dv, &.mentioned-Tre-dv::before {
                 background: unset !important;
             }
-            & .header-2jRmjb {
-                position: absolute;
-                line-height: 63px;
-                bottom: -63px;
-                left: 54px;
-                z-index: 3;
-                & img {
-                    top: 20px;
-                }
-            }
-            & .avatar-2e8lTP {
-                position: absolute;
-                bottom: -43px;
-                left: 20px;
-                width: 24px;
-                height: 24px;
-            }
-            & .messageContent-2t3eCI {
+            & .contents-2MsGLg {
                 position: static;
-                height: calc(var(--card-height) - 78px - 3.25rem);
-                width: calc(100% + 60px);
-                overflow-y: auto;
-                margin-top: 3.25rem;
-                &>* {
-                    line-height: normal;
-                }
-                &>.blockquoteContainer-3VtvI1:first-child>blockquote>:first-child:not(a), &>:first-child:not(a):not(.blockquoteContainer-3VtvI1) {
+                text-indent: unset;
+                & .header-2jRmjb {
                     position: absolute;
+                    line-height: 63px;
+                    bottom: -63px;
+                    left: 54px;
+                    z-index: 3;
+                    & img {
+                        top: 20px;
+                    }
+                }
+                & .avatar-2e8lTP {
+                    position: absolute;
+                    bottom: -43px;
+                    left: 20px;
+                    width: 24px;
+                    height: 24px;
+                }
+                & .messageContent-2t3eCI {
                     display: block;
-                    font-size: 1.4rem;
-                    top: 7px;
-                    line-height: 3.25rem;
-                    left: 1.25rem;
-                    text-transform: capitalize;
-                    &, & * {
-                        text-decoration: unset;
-                        font-style: normal;
-                        font-weight: bold;
+                    position: static;
+                    height: calc(var(--card-height) - 78px - 3.25rem);
+                    width: calc(100% + 60px);
+                    overflow-y: auto;
+                    margin-top: 3.25rem;
+                    &>* {
+                        line-height: normal;
                     }
-                }
-                &::first-line, &>.blockquoteContainer-3VtvI1>blockquote::first-line {
-                    line-height: 0;
-                    color: transparent;
-                }
-                &::-webkit-scrollbar {
-                    width: 8px;
-                    height: 8px;
-                }
-                &::-webkit-scrollbar-thumb {
-                    background-clip: padding-box;
-                    border: 2px solid transparent;
-                    border-radius: 4px;
-                    background-color: var(--scrollbar-thin-thumb);
-                    min-height: 40px;
-                }
-                & a[href^="https://github.com/"] {
-                    @include button('GitHub', 130px);
-                    &::before {
-                        @include button-image($github-icon, 16, 16);
-                        right: 67px;
-                        bottom: -38px;
+                    &>.blockquoteContainer-3VtvI1:first-child>blockquote>:first-child:not(a), &>:first-child:not(a):not(.blockquoteContainer-3VtvI1) {
+                        position: absolute;
+                        display: block;
+                        font-size: 1.4rem;
+                        top: 7px;
+                        line-height: 3.25rem;
+                        left: 1.25rem;
+                        text-transform: capitalize;
+                        &, & * {
+                            text-decoration: unset;
+                            font-style: normal;
+                            font-weight: bold;
+                        }
                     }
-                    &::after {
-                        right: -14px;
-                        bottom: -52px;
+                    &::first-line, &>.blockquoteContainer-3VtvI1>blockquote::first-line {
+                        line-height: 0;
+                        color: transparent;
                     }
-                    &~a::before, &~a::after {
-                        content: unset;
+                    &::-webkit-scrollbar {
+                        width: 8px;
+                        height: 8px;
+                    }
+                    &::-webkit-scrollbar-thumb {
+                        background-clip: padding-box;
+                        border: 2px solid transparent;
+                        border-radius: 4px;
+                        background-color: var(--scrollbar-thin-thumb);
+                        min-height: 40px;
+                    }
+                    & a[href^="https://github.com/"] {
+                        @include button('GitHub', 130px);
+                        &::before {
+                            @include button-image($github-icon, 16, 16);
+                            right: 67px;
+                            bottom: -38px;
+                        }
+                        &::after {
+                            right: -14px;
+                            bottom: -52px;
+                        }
+                        &~a::before, &~a::after {
+                            content: unset;
+                        }
                     }
                 }
             }
@@ -149,6 +156,11 @@ $gallery-icon: 'M6 2C3.79086 2 2 3.79086 2 6V18C2 20.2091 3.79086 22 6 22H18C20.
             & .imageWrapper-oMkQl4 {
                 width: max-content !important;
                 height: max-content !important;
+            }
+        }
+        .message-2CShn3:not(.cozyMessage-1DWF9U) {
+            .header-2jRmjb {
+                left: 26px !important;
             }
         }
     }
