@@ -140,16 +140,22 @@ $gallery-icon: 'M6 2C3.79086 2 2 3.79086 2 6V18C2 20.2091 3.79086 22 6 22H18C20.
                 position: absolute;
                 display: flex;
                 right: 126px;
-                &>div>a {
-                    width: 108px !important;
-                    height: 42px !important;
+                &>.messageAttachment-CZp8Iv, &>.embed-hKpSrO {
+                    width: 108px;
+                    height: 42px;
                     margin: 8px 0 0 10px;
-                    border-radius: 0;
-                    @include button('Preview', 108px);
-                    &::before {
-                        @include button-image($gallery-icon, 18, 24);
-                        bottom: 12px;
-                        left: 19px;
+                    &>.imageWrapper-oMkQl4 {
+                        width: 100% !important;
+                        height: 100% !important;
+                        border-radius: 0;
+                        &>.originalLink-Azwuo9 {                            
+                            @include button('Preview', 108px);
+                            &::before {
+                                @include button-image($gallery-icon, 18, 24);
+                                bottom: 12px;
+                                left: 19px;
+                            }
+                        }
                     }
                 }
             }
@@ -175,6 +181,7 @@ $gallery-icon: 'M6 2C3.79086 2 2 3.79086 2 6V18C2 20.2091 3.79086 22 6 22H18C20.
     & .embedSuppressButton-1rZHq6,
     & .imageAccessory-2yA7Kb,
     & .wrapperPaused-9B8znP,
+    & .clickableWrapper-2WTAkL,
     & .container-2sjPya>div>a>* {
         display: none;
     }
