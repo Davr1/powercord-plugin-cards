@@ -135,15 +135,19 @@ $gallery-icon: 'M6 2C3.79086 2 2 3.79086 2 6V18C2 20.2091 3.79086 22 6 22H18C20.
                 }
             }
             & .container-2sjPya {
-                max-width: calc(118px * var(--max-previews));
+                max-width: calc(100% * var(--max-previews));
                 overflow: hidden;
                 position: absolute;
-                display: flex;
+                padding: 10px 0 0 0;
+                height: 42px;
                 right: 126px;
+                display: grid;
+                grid-template-columns: repeat(var(--max-previews), auto);
+                grid-template-rows: 1fr;
                 &>.messageAttachment-CZp8Iv, &>.embed-hKpSrO {
                     width: 108px;
                     height: 42px;
-                    margin: 8px 0 0 10px;
+                    margin-left: 10px;
                     &>.imageWrapper-oMkQl4 {
                         width: 100% !important;
                         height: 100% !important;
